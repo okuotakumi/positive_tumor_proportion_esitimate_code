@@ -1,4 +1,5 @@
 # Automatic positive tumor proportion diagnosis tests
+![overview](./overview.png)
 ## Prerequisites
 - PIL
 - pytorch
