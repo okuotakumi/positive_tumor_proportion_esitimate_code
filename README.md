@@ -15,41 +15,41 @@ Running whole script
 python main.py
 ```
 
-## Codeについて
-|- base_detector : 全ての細胞を検出する  
-| 　|- datas : train用のサンプルデータ   
-| 　|- model : CNN のmodelのcode  
+## About code
+|- base_detector : Detect all cells  
+| 　|- datas : Sample data for train     
+| 　|- model : CNN model code  
 | 　|- preprocessing  
-| 　| 　|- img_slice.py : core画像をpatch画像に切り分けるcode  
-|　 | 　|- patch2core.py : 推定結果から細胞の座標を取得するcode  
-| 　|- utils : dataloaderのcodeがあるdirectory  
-| 　|- basedetector_train.py : 細胞検出の学習code   
-| 　L basedetector_pred.py : 学習した重みを使って推定を行うcode  
+| 　| 　|- img_slice.py : code to separate core image into patch images    
+|　 | 　|- patch2core.py : Code to obtain cell coordinates from the estimation results  
+| 　|- utils : directory with dataloader code  
+| 　|- basedetector_train.py : Train code for cell detection   
+| 　L basedetector_pred.py : Code for estimation with learned weights  
 
-|- cancer_or_noncancer_detection : 細胞を腫瘍，非腫瘍に分類する  
-| 　|- datas : train用のサンプルデータ  
-| 　|- model : CNN のmodelのcode      
+|- cancer_or_noncancer_detection : Classify cells as tumor or non-tumor  
+| 　|- datas : Sample data for train  
+| 　|- model : CNN model code      
 | 　|- preprocessing  
-| 　| 　|- point2patch : core画像の座標からpatch画像の座標に適応させるcode  
-| 　|- utils : dataloaderのcodeがあるdirectory  
-| 　|- c_or_n_train.py : 腫瘍，非腫瘍分類の学習code  
-| 　L c_or_n_pred.py : 学習した重みを使って推定を行うcode  
+| 　| 　|- point2patch : Code to adapt from core image coordinates to patch image coordinates  
+| 　|- utils : directory with dataloader code  
+| 　|- c_or_n_train.py : Train codes for tumor and non-tumor classification  
+| 　L c_or_n_pred.py : Code for estimation with learned weights  
 
-|- estimation_proportion : 陽性腫瘍比率を推定する  
-| 　|- datas : train用のサンプルデータ  
-| 　|- model : CNN のmodelのcode + 自作のloss関数   
+|- estimation_proportion : Estimating the Positive Tumor Proportion  
+| 　|- datas : Sample data for train  
+| 　|- model : CNN model code + self-made loss function   
 | 　|- preprocessing  
-| 　| 　|- img_resize.py : core画像を入力画像サイズにリサイズするcode  
-|　 | 　|- make_mask.py : core画像と腫瘍細胞の座標からマスクを作成するcode  
-| 　|- utils : dataloaderのcodeがあるdirectory  
-| 　|- proportion_train.py : 陽性腫瘍比率を学習するcode  
-| 　L proportion_test.py : 陽性腫瘍比率を出力し評価するcode  
+| 　| 　|- img_resize.py : Code to resize core image to input image size  
+|　 | 　|- make_mask.py : Code to create a mask from core image and tumor cell coordinates  
+| 　|- utils : directory with dataloader code  
+| 　|- proportion_train.py : Code to train positive tumor proportion  
+| 　L proportion_test.py : Code to output and evaluate the positive tumor proportion  
 
-|- sample_ica : 細胞検出をするために色を抜く  
-| 　L sample_ica.py : 画像から色を抜くcode  
+|- sample_ica : Remove color for cell detection.  
+| 　L sample_ica.py : Code for removing color from an image  
 
-|- env_file_yml : 用いている環境  
+|- env_file_yml : Environment used  
 
-|- param.py : 一括で行うためのパラメータ  
+|- param.py : Parameters for batch  
 
-|- main.py : 陽性腫瘍比率の推定を一括で行うcode  
+|- main.py : Batch positive tumor proportion estimation code  
